@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="zh-Hant">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>陪玩工作派發系統 | Esports Dispatch</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="hero">
+      <div class="hero__glow"></div>
+      <h1>陪玩工作室工作派發系統</h1>
+      <p>電競風格｜即時接單｜完工審核｜薪資結算</p>
+      <div class="role-tags">
+        <span>Employee Portal</span>
+        <span>Admin Console</span>
+      </div>
+    </header>
+
+    <main class="layout">
+      <section class="panel">
+        <h2>員工功能</h2>
+        <ul>
+          <li>建立帳號密碼進入系統</li>
+          <li>瀏覽訂單公佈欄</li>
+          <li>選擇承接訂單</li>
+          <li>檢視個人薪資明細</li>
+          <li>上傳完工指定圖片供審核</li>
+        </ul>
+      </section>
+
+      <section class="panel">
+        <h2>管理員功能</h2>
+        <ul>
+          <li>編輯訂單公佈欄（建立訂單 / 指派承接人）</li>
+          <li>新建訂單種類及價格</li>
+          <li>調整員工階級</li>
+          <li>檢視每日營業報表與員工薪資</li>
+          <li>打賞功能與系統操作紀錄</li>
+        </ul>
+      </section>
+
+      <section class="panel panel--wide">
+        <h2>訂單公佈欄（預覽：僅顯示伺服器 + 單種名稱）</h2>
+        <div id="order-board" class="order-board"></div>
+      </section>
+
+      <section class="panel panel--wide">
+        <h2>訂單詳情</h2>
+        <div id="order-detail" class="order-detail empty">請先選擇左側訂單卡片</div>
+      </section>
+
+      <section class="panel panel--wide">
+        <h2>營業與薪資儀表板（審核後自動更新）</h2>
+        <div class="metrics">
+          <div class="metric">
+            <span>今日營業額</span>
+            <strong id="daily-revenue">NT$ 0</strong>
+          </div>
+          <div class="metric">
+            <span>今日完成單數</span>
+            <strong id="daily-count">0</strong>
+          </div>
+          <div class="metric">
+            <span>員工薪資（示例）</span>
+            <strong id="employee-salary">NT$ 0</strong>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <p>Prototype v1 · 實務開發請串接後端 API 與資料庫權限控管</p>
+    </footer>
+
+    <script src="app.js"></script>
+  </body>
+</html>
