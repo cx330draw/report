@@ -1,0 +1,230 @@
+:root {
+  --bg: #090b13;
+  --panel: #121726;
+  --line: #273253;
+  --text: #dce6ff;
+  --muted: #8fa4d7;
+  --neon: #33f3ff;
+  --purple: #8f4dff;
+  --green: #2ef0a0;
+  --orange: #ffb454;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Segoe UI", "Noto Sans TC", sans-serif;
+  background: radial-gradient(circle at top, #171b33, var(--bg) 40%);
+  color: var(--text);
+}
+
+.hero {
+  position: relative;
+  text-align: center;
+  padding: 44px 18px 30px;
+  border-bottom: 1px solid var(--line);
+  overflow: hidden;
+}
+
+.hero__glow {
+  position: absolute;
+  inset: -120px auto auto 50%;
+  width: 420px;
+  height: 420px;
+  transform: translateX(-50%);
+  background: radial-gradient(circle, rgba(51, 243, 255, 0.28), transparent 70%);
+  pointer-events: none;
+}
+
+.hero h1 {
+  margin: 0;
+  font-size: clamp(1.7rem, 4vw, 2.5rem);
+  text-shadow: 0 0 12px rgba(51, 243, 255, 0.45);
+}
+
+.hero p {
+  margin: 8px 0 0;
+  color: var(--muted);
+}
+
+.role-tags {
+  margin-top: 14px;
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.role-tags span {
+  border: 1px solid var(--line);
+  padding: 6px 10px;
+  border-radius: 999px;
+  background: rgba(143, 77, 255, 0.1);
+  font-size: 0.85rem;
+}
+
+.layout {
+  max-width: 1200px;
+  margin: 22px auto 36px;
+  padding: 0 16px;
+  display: grid;
+  gap: 16px;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+}
+
+.panel {
+  background: linear-gradient(180deg, rgba(18, 23, 38, 0.97), rgba(12, 16, 28, 0.95));
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  padding: 16px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.28);
+}
+
+.panel--wide {
+  grid-column: 1 / -1;
+}
+
+h2 {
+  margin-top: 0;
+  font-size: 1.1rem;
+}
+
+ul {
+  margin: 0;
+  padding-left: 18px;
+  line-height: 1.7;
+  color: var(--muted);
+}
+
+.order-board {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 10px;
+}
+
+.order-card {
+  border: 1px solid #33426b;
+  border-radius: 10px;
+  padding: 10px;
+  background: #11182c;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.order-card:hover,
+.order-card.active {
+  transform: translateY(-2px);
+  border-color: var(--neon);
+  box-shadow: 0 0 0 1px rgba(51, 243, 255, 0.26);
+}
+
+.order-card small {
+  color: var(--muted);
+}
+
+.badge {
+  display: inline-block;
+  padding: 3px 8px;
+  border-radius: 999px;
+  font-size: 0.72rem;
+  margin-top: 8px;
+}
+
+.badge.open { background: rgba(46, 240, 160, 0.18); color: var(--green); }
+.badge.progress { background: rgba(255, 180, 84, 0.18); color: var(--orange); }
+.badge.done { background: rgba(51, 243, 255, 0.18); color: var(--neon); }
+
+.order-detail {
+  min-height: 180px;
+  display: grid;
+  gap: 8px;
+}
+
+.order-detail.empty {
+  align-items: center;
+  justify-items: center;
+  color: var(--muted);
+  border: 1px dashed #33426b;
+  border-radius: 12px;
+}
+
+.detail-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 10px;
+}
+
+.field {
+  background: #0f1425;
+  border: 1px solid #2a3558;
+  border-radius: 8px;
+  padding: 8px;
+}
+
+.field span {
+  color: var(--muted);
+  display: block;
+  font-size: 0.82rem;
+}
+
+.actions {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-top: 8px;
+}
+
+button {
+  border: 1px solid #39507d;
+  background: #16213f;
+  color: var(--text);
+  padding: 8px 11px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+button.primary {
+  border-color: #2bd4e2;
+  background: #133743;
+}
+
+button:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+}
+
+.metrics {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+  gap: 10px;
+}
+
+.metric {
+  border: 1px solid #2d3e69;
+  background: #10182f;
+  border-radius: 10px;
+  padding: 10px;
+}
+
+.metric span {
+  color: var(--muted);
+  display: block;
+  margin-bottom: 5px;
+  font-size: 0.85rem;
+}
+
+.metric strong {
+  font-size: 1.2rem;
+  color: var(--neon);
+}
+
+footer {
+  text-align: center;
+  color: var(--muted);
+  border-top: 1px solid var(--line);
+  padding: 16px;
+  font-size: 0.85rem;
+}
